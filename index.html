@@ -3,9 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tyson's Reflection Journal</title>
 </head>
 <body>
-    <h1>Hello World</h1>
+    <h1>Reflection Journal</h1>
+    <input type="text" id="description" placeholder="Describe your day"/>
+    <select id="emotion">
+        <option value="Happy">Happy</option>
+        <option value="Sad">Sad</option>
+        <option value="Angry">Angry</option>
+        <option value="Anxious">Anxious</option>
+        <option value="Fearful">Fearful</option>
+        <option value="Peaceful">Peaceful</option>
+        <option value="Lazy">Lazy</option>
+    </select>
+    <label for="rate">Today's Rating:</label>
+    <input type="range" id="rating" name="rate" min="1" max="10" value="5"/>
+    <input type="date" id="currentDate"/>
+    <input type="submit" id="submitButton"/>
 </body>
 </html>
