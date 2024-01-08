@@ -4,6 +4,7 @@ const rating = document.getElementById('rating');
 const currentDate = document.getElementById('currentDate');
 
 const submit = document.getElementById('submitButton');
+const clear = document.getElementById('clearButton');
 
 //Needs to be saved
 const descriptionCollection = [];
@@ -62,45 +63,48 @@ submit.addEventListener('click', () => {
         rat: rating.value ,
         dat: currentDate.value
     };
-    localStorage.clear();
-    //ERROR
-    if(localStorage == null){
+
+    if(localStorage.length <= 0){
         SetUp();
     }
     else{
-        SetUp();
-        //ObjectMover();
+        ObjectMover();
     }
 
-    localStorage.setItem("obj1", newObj);
-    console.log("1: " + newObj['des']);
+    localStorage.setItem("obj1", JSON.stringify(newObj));
+    console.log('1: "' + newObj['des'] + '"');
 
     for (let i = 2; i <= 10; i++) {
         let holderObj = JSON.parse(localStorage.getItem("obj" + i));
-        console.log("\n" + i + ": " + holderObj['des']);
+        console.log("\n" + i + ": " + JSON.stringify(holderObj['des']));
     }
 })
 
 function SetUp() {
     console.log("Set Up\n");
-    let objects = [];
-    for (let i = 0; i < 10; i++) {
-        objects[i] = {
-            des: "Test",
+    for (let i = 1; i < 11; i++) {
+        let createdObj = {
+            des: "" + i,
             emo: "",
             rat: "",
             dat: ""
         };
-        localStorage.setItem("obj" + (i + 1), JSON.stringify(objects[i]));
+        localStorage.setItem("obj" + (i), JSON.stringify(createdObj));
     }
 }
+
 
 function ObjectMover() {
-    let i = 1;
-    while(i < 10){
-        let currentObj = localStorage.getItem("obj"+i);
-        localStorage.setItem("obj"+i+1, currentObj);
-
-        i++;
+    console.log("Object Mover\n");
+    let i = 10;
+    while(i > 1){
+        let currentObj = JSON.parse(localStorage.getItem("obj" + (i - 1))); 
+        localStorage.setItem("obj" + (i), JSON.stringify(currentObj));
+        
+        i--;
     }
 }
+
+clear.addEventListener('click', () => {
+    localStorage.clear();
+})
