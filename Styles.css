@@ -1,0 +1,37 @@
+body {
+    display: flex;              /*Makes it a flex container*/
+    flex-direction: column;     /*Makes children stack vertically*/
+    align-items: center;        /*Center children on horizontal axis*/
+    justify-content: center;    /*Center children along main/verical axis*/
+    height: 100vh;              /*Use 100% of viewport height without javing to scroll*/
+    margin: 0;                  /*Rset margin padding*/
+}
+
+h1 {
+    color: white;             /*Sets color of title to white*/
+}
+
+#description {
+    height: 100px;              /*Sets height of input text box*/
+    width: 800px;               /*Sets width of input text box*/
+    margin-bottom: 30px;        /*Adds space of Xpx between text box and other options below it*/
+    text-align: left;           /*Algins text in the middle left side of text box*/      
+}
+
+#extraInputContainer > * {      /*Targets all/each direct children with this ID*/
+    margin-right: 20px;         /*Adds space to the right of Xpx amount*/
+    margin-left: 20px;          /*Adds space to the left of Xpx amount*/
+}
+
+#rating {
+    width: 20%;                 /*Range input that sets width of element to X% of its container's length*/
+}
+
+#footerButtons > * {
+    width: 100px;
+    height: 50px;
+    margin-top: 70px;           /*Adds top space of Xpx*/
+    margin-right: 40px;          
+    margin-left: 40px;
+}
+
