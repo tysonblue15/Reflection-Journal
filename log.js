@@ -3,6 +3,9 @@ const emotion = document.getElementById('emotion');
 const rating = document.getElementById('rating');
 const currentDate = document.getElementById('currentDate');
 
+const rateSlider = document.getElementById('rating');
+const rateLabel = document.getElementById('currentRate');
+
 const submit = document.getElementById('submitButton');
 const clear = document.getElementById('clearButton');
 
@@ -104,6 +107,10 @@ function ObjectMover() {
         i--;
     }
 }
+
+rateSlider.addEventListener('mousemove', () => {
+    rateLabel.textContent = rateSlider.value;
+})
 
 clear.addEventListener('click', () => {
     localStorage.clear();

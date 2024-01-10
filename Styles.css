@@ -14,8 +14,12 @@ h1 {
 #description {
     height: 100px;              /*Sets height of input text box*/
     width: 800px;               /*Sets width of input text box*/
-    margin-bottom: 30px;        /*Adds space of Xpx between text box and other options below it*/
-    text-align: left;           /*Algins text in the middle left side of text box*/      
+    margin-bottom: 60px;        /*Adds space of Xpx between text box and other options below it*/ 
+}
+
+#extraInputContainer {
+    width: 750px;
+    display: flex;
 }
 
 #extraInputContainer > * {      /*Targets all/each direct children with this ID*/
@@ -23,13 +27,40 @@ h1 {
     margin-left: 20px;          /*Adds space to the left of Xpx amount*/
 }
 
-#rating {
-    width: 20%;                 /*Range input that sets width of element to X% of its container's length*/
+#ratingSlider {
+    width: 50%;
+    margin: 0 auto;             /*Makes the element horizontally*/
+    display: flex;              /*Makes it a flex container*/
+    justify-content: space-between;  /*Distribute space between elements*/
+    align-items: center;        /*Center vertically*/
+    flex-direction: column;
 }
+
+#labelContainer {
+    display: flex;  /* Nested flex container for labels "1" and "10" */
+}
+
+#ratingText {
+    margin-right: 10px;
+}
+
+#currentRate {
+    margin-left: 90px;
+}
+
+#rating {
+    width: 150px;               /*Slider input width*/
+}
+
+#ratingSlider label {
+    flex-grow: 1;               /*Allow labels to take up available space*/
+    text-align: center;         /*Center text within labels*/
+}
+
 
 #footerButtons > * {
     width: 100px;
-    height: 50px;
+    height: 40px;
     margin-top: 70px;           /*Adds top space of Xpx*/
     margin-right: 40px;          
     margin-left: 40px;
