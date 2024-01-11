@@ -4,11 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            updateText();
+        });
+    </script>
+    
 </head>
 <body>
     <h1>Library</h1>
-    <button id="logButton">New Log</button>
-    <button id="statsButton">Stats</button>
+    <div id="headerButtons">
+        <button id="logButton">New Log</button>
+        <button id="statsButton">Stats</button>
+    </div>
+    <div id="logsSection">
+        <p id="log1Description">Log 1 Goes Here!</p>
+    </div>
+    
+    
 
     <script src="Library.js"></script>
 </body>

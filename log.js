@@ -16,6 +16,7 @@ const ratingCollection = [];
 const currentDateCollection = [];
 const dataCollection = [];
 
+
 submit.addEventListener('click', () => {
     if(descriptionCollection.length >= 10){
         descriptionCollection.pop();
@@ -83,6 +84,7 @@ submit.addEventListener('click', () => {
     }
 
     location.replace('/library.html')
+    updateText();
 
 })
 
