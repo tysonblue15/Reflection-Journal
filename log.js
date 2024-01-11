@@ -81,6 +81,9 @@ submit.addEventListener('click', () => {
         let holderObj = JSON.parse(localStorage.getItem("obj" + i));
         console.log("\n" + i + ": " + JSON.stringify(holderObj['des']));
     }
+
+    location.replace('/library.html')
+
 })
 
 function SetUp() {
