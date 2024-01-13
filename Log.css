@@ -1,17 +1,20 @@
 body {
+    background-color: #2e2e2e;
     display: flex;              /*Makes it a flex container*/
     flex-direction: column;     /*Makes children stack vertically*/
     align-items: center;        /*Center children on horizontal axis*/
     justify-content: center;    /*Center children along main/verical axis*/
     height: 100vh;              /*Use 100% of viewport height without javing to scroll*/
-    margin: 0;                  /*Rset margin padding*/
+    margin: 0;                  /*Reset margin padding*/
 }
 
 h1 {
     color: white;             /*Sets color of title to white*/
+    font-size: 70px;
 }
 
 #description {
+    background-color: #d3d3d3;
     height: 100px;              /*Sets height of input text box*/
     width: 800px;               /*Sets width of input text box*/
     margin-bottom: 60px;        /*Adds space of Xpx between text box and other options below it*/ 
@@ -38,6 +41,7 @@ h1 {
 
 #labelContainer {
     display: flex;  /* Nested flex container for labels "1" and "10" */
+    color: white;  
 }
 
 #ratingText {
@@ -46,6 +50,7 @@ h1 {
 
 #currentRate {
     margin-left: 90px;
+    color: white;  
 }
 
 #rating {
