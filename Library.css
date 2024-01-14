@@ -14,11 +14,24 @@ h1 {
 
 
 #log1Section {
-    
     width: 1400px;
+    background-color: red;
     display: flex;
 }
 
 #log1DescriptionContainer {
-    margin-right: 300px;
+    display: flex;
+    flex: 1;
+}
+
+#log1ExtraContent {
+    margin-top: 15px;
+}
+
+#log1ExtraContent > * > p {     /*Taregts all and only <p> elements*/
+    margin: 0px;
+    margin-bottom: 5px;
+    margin-right: 60px;
+    margin-left: 50px;
+    flex: 1;
 }

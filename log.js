@@ -84,8 +84,6 @@ submit.addEventListener('click', () => {
     }
 
     location.replace('/library.html')
-    updateText();
-
 })
 
 function SetUp() {
