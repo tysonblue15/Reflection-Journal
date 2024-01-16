@@ -13,23 +13,24 @@ h1 {
 }
 
 
-#log1Section {
+#log1Section, #log2Section {
     width: 1400px;
     background-color: red;
     display: flex;
+    margin-bottom: 5px;
 }
 
-#log1DescriptionContainer {
-    display: flex;
-    flex: 1;
+#log1DescriptionContainer, #log2DescriptionContainer {
+    width: 1200px;
 }
 
-#log1ExtraContent {
+#log1ExtraContent, #log2ExtraContent {
     margin-top: 15px;
 }
 
-#log1ExtraContent > * > p {     /*Taregts all and only <p> elements*/
-    margin: 0px;
+#log1ExtraContent p,
+#log2ExtraContent p {               /*Taregts all and only <p> elements*/
+    margin: 0px;                    /*Takes away default spacing between <p>*/
     margin-bottom: 5px;
     margin-right: 60px;
     margin-left: 50px;
