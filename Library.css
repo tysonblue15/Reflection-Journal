@@ -9,27 +9,37 @@ body {
 }
 
 h1 {
-    color: black;                /*Sets color of title to white*/
+    color: black;                /*Sets color of title to black*/
 }
 
 
-#log1Section, #log2Section {
+#log1Section, #log2Section, #log3Section, #log4Section, #log5Section, #log6Section, #log7Section, #log8Section,
+#log9Section, #log10Section {
     width: 1400px;
-    background-color: red;
     display: flex;
     margin-bottom: 5px;
 }
 
-#log1DescriptionContainer, #log2DescriptionContainer {
+#log1DescriptionContainer, #log2DescriptionContainer, #log3DescriptionContainer, #log4DescriptionContainer, #log5DescriptionContainer,
+#log6DescriptionContainer, #log7DescriptionContainer, #log8DescriptionContainer, #log9DescriptionContainer, #log10DescriptionContainer {
     width: 1200px;
 }
 
-#log1ExtraContent, #log2ExtraContent {
+#log1ExtraContent, #log2ExtraContent, #log3ExtraContent, #log4ExtraContent, #log5ExtraContent,
+#log6ExtraContent, #log7ExtraContent, #log8ExtraContent, #log8Section, #log9Section, #log10Section {
     margin-top: 15px;
 }
 
 #log1ExtraContent p,
-#log2ExtraContent p {               /*Taregts all and only <p> elements*/
+#log2ExtraContent p,
+#log3ExtraContent p,
+#log4ExtraContent p,
+#log5ExtraContent p,
+#log6ExtraContent p,
+#log7ExtraContent p,
+#log8ExtraContent p ,
+#log9ExtraContent p,
+#log10ExtraContent p  {               /*Taregts all and only <p> elements*/
     margin: 0px;                    /*Takes away default spacing between <p>*/
     margin-bottom: 5px;
     margin-right: 60px;

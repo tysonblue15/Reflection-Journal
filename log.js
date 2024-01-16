@@ -90,7 +90,7 @@ function SetUp() {
     console.log("Set Up\n");
     for (let i = 1; i < 11; i++) {
         let createdObj = {
-            des: "" + i,
+            des: "No data.",
             emo: "",
             rat: "",
             dat: ""

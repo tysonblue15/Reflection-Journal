@@ -5,11 +5,18 @@ newLog.addEventListener('click', () => {
 })
 
 function updateText(){
-    for (let i = 1; i <= 2; i++) {
+    for (let i = 1; i <= 10; i++) {
         let holderObj = JSON.parse(localStorage.getItem("obj" + i));
         document.getElementById('log'+i+'Description').innerText = i+ ": " + JSON.stringify(holderObj['des']); //Use only holderObj['des'] to remove ""
-        document.getElementById('date'+i).innerText = "Here"; //holderObj['dat']
-        document.getElementById('emotion'+i).innerText = holderObj['emo'];
-        document.getElementById('rating'+i).innerText = holderObj['rat'] + "/10";
+        if(JSON.stringify(holderObj['des']) == '"No data."'){
+            document.getElementById('date'+i).innerText = "No date."; //holderObj['dat']
+            document.getElementById('emotion'+i).innerText = "No emotion.";
+            document.getElementById('rating'+i).innerText = "No rating.";
+        }
+        else{
+            document.getElementById('date'+i).innerText = holderObj['dat']; //holderObj['dat']
+            document.getElementById('emotion'+i).innerText = holderObj['emo'];
+            document.getElementById('rating'+i).innerText = holderObj['rat'] + "/10";
+        }
     }    
 }
