@@ -1,7 +1,12 @@
 const newLog = document.getElementById('logButton');
+const stats = document.getElementById('statsButton');
 
 newLog.addEventListener('click', () => {
-    location.replace('/index.html')
+    location.replace('/Pages/index.html')
+})
+
+stats.addEventListener('click', () => {
+    location.replace('/Pages/stats.html')
 })
 
 function updateText(){

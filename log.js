@@ -30,7 +30,6 @@ submit.addEventListener('click', () => {
     emotionMap['Sad'] = 0;
     emotionMap['Angry'] = 0;
     emotionMap['Anxious'] = 0;
-    emotionMap['Fearful'] = 0;
     emotionMap['Peaceful'] = 0;
     emotionMap['Lazy'] = 0;
 
@@ -83,7 +82,7 @@ submit.addEventListener('click', () => {
         console.log("\n" + i + ": " + JSON.stringify(holderObj['des']));
     }
 
-    location.replace('/library.html')
+    location.replace('/Pages/library.html')
 })
 
 function SetUp() {
