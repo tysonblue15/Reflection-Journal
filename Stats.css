@@ -1,55 +1,59 @@
+:root {
+    --emotionCount: 10;
+    --degreeAmount: 360 / var(--emotionCount);
+    --happy: 1;
+    --happyDeg: calc(var(--happy) * var(--degreeAmount) * 1deg);
+    --sad: 1;
+    --sadDeg: calc(var(--sad) * var(--degreeAmount) * 1deg + var(--happyDeg));
+    --angry: 1;
+    --angryDeg: calc(var(--angry) * var(--degreeAmount) * 1deg + var(--sadDeg));
+    --anxious: 1;
+    --anxiousDeg: calc(var(--anxious) * var(--degreeAmount) * 1deg + var(--angryDeg));
+    --peaceful: 1;
+    --peacefulDeg: calc(var(--peaceful) * var(--degreeAmount) * 1deg + var(--anxiousDeg));
+}
+
 body {
-    background-color: #d3d3d3;
+    background-color: #2e2e2e;
+    font-size: 16px;
     margin: 0;
-    display: flex;                  /*Makes it a flex container*/
-    flex-direction: column;         /*Makes children stack vertically*/
-    align-items: center;            /*Center children on horizontal axis*/
-    justify-content: flex-start;    /*Center children starting near the top*/
-    min-height: 100vh;
-}
-
-h1 {
-    color: black;                /*Sets color of title to black*/
-}
-
-.container {
-    width: 1000px;
-}
-
-.chart-wrap {
+    
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+
+    /**/
 }
 
-.pie-chart {
-    width: 400px;
-    height: 400px;
+.x-box {
+    width: 70vh;
+    height: 70vh;
     border-radius: 50%;
     background-color: #fff;
+
+    background: repeating-conic-gradient(
+        from 0deg,
+        #f6ff00 0deg var(--happyDeg),
+        #00a2fa var(--happyDeg) var(--sadDeg),
+        #cf0808 var(--sadDeg) var(--angryDeg),
+        #5ab510 var(--angryDeg) var(--anxiousDeg),
+        #d10a71 var(--anxiousDeg) var(--peacefulDeg),
+        #5a0cad var(--peacefulDeg) 360deg
+    );
 }
 
-.chart-info h2 {
-    text-transform: capitalize;
+.x-box-cont {
     font-size: 30px;
+    padding-left: 50px;
 }
 
-.chart-info ul{
-    padding: 0;
-    margin: 0;
-    list-style: none;
-}
-
-.chart-info ul li {
-    margin-bottom: 10px;
+.x-box-cont h1 {
     font-size: 30px;
-    text-align: right;
+    text-transform: uppercase;
 }
 
-.chart-info ul li span {
-    width: 30px;
-    height: 20px;
-    border-radius: 5px;
-    margin-left: 5px;
-    display: inline-block;
+.x-box-cont strong{
+    display: block;
+    margin-bottom: 15px;
 }

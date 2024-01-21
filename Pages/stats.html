@@ -5,37 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Stats</title>
     <link rel="stylesheet" href="../Stats.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function () { //Calls function once the page is fully loaded
+            change();
+        });
+    </script>
 </head>
 <body>
-    <h1>Statistics</h1>
-    <div id="headerButtons">
-        <button id="logButton">New Log</button>
-        <button id="libraryButton">Library</button>
-    </div>
-    <div class="container">
-        <div class="chart-wrap">
-            <figure class="pie-chart" style="background: 
-                conic-gradient(
-                    from 0deg,
-                    #f6ff00 0,
-                    #f6ff00 (35%),
-                    #00a2fa (35%),
-                    #00a2fa (35% + 25%)
-                )"></figure>
-            <div class="chart-info">
-                <h2>Emotion Data</h2>
-                <ul>
-                    <li>Happy: X% <span style="background-color: #f6ff00"></span></li>
-                    <li>Sad: X% <span style="background-color: #00a2fa"></span></li>
-                    <li>Angry: X% <span style="background-color: #cf0808"></span></li>
-                    <li>Anxious: X% <span style="background-color: #5ab510"></span></li>
-                    <li>Peaceful: X% <span style="background-color: #d10a71"></span></li>
-                    <li>Lazy: X% <span style="background-color: #5a0cad"></span></li>
-                </ul>
-            </div>
+    <div class="header-items">
+        <h1>Statistics</h1>
+        <div id="headerButtons">
+            <button id="logButton">New Log</button>
+            <button id="libraryButton">Library</button>
         </div>
     </div>
-
+    <div class="x-box"></div>
+    <div class="x-box-cont">
+        <h1>Emotions Data</h1>
+        <strong style="color: #f6ff00">Happy</strong>
+        <strong style="color: #00a2fa">Sad</strong>
+        <strong style="color: #cf0808">Angry</strong>
+        <strong style="color: #5ab510">Anxious</strong>
+        <strong style="color: #d10a71">Peaceful</strong>
+        <strong style="color: #5a0cad">Lazy</strong>
+    </div>
+    <script src="../Log.js"></script>
     <script src="../Stats.js"></script>
 </body>
 </html>

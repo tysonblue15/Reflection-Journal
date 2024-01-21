@@ -8,3 +8,8 @@ newLog.addEventListener('click', () => {
 library.addEventListener('click', () => {
     location.replace('/Pages/library.html')
 })
+
+function change() {
+    const root = document.documentElement;
+    root.style.setProperty('--happy', emotionMap['Happy']); //Broken
+}

@@ -1,9 +1,9 @@
 const description = document.getElementById('description');
 const emotion = document.getElementById('emotion');
-const rating = document.getElementById('rating');
+const rating = document.getElementById('rating'); //ISSUE
 const currentDate = document.getElementById('currentDate');
 
-const rateSlider = document.getElementById('rating');
+const rateSlider = document.getElementById('rating'); //ISSUE
 const rateLabel = document.getElementById('currentRate');
 
 const submit = document.getElementById('submitButton');
@@ -16,22 +16,21 @@ const ratingCollection = [];
 const currentDateCollection = [];
 const dataCollection = [];
 
+let emotionMap = {
+    'Happy': 0,
+    'Sad': 0,
+    'Angry': 0,
+    'Anxious': 0,
+    'Peaceful': 0,
+    'Lazy': 0
+};
+
 
 submit.addEventListener('click', () => {
     if(descriptionCollection.length >= 10){
         descriptionCollection.pop();
     }
     descriptionCollection.unshift(description.value)
-    
-    
-    let emotionMap ={};
-
-    emotionMap['Happy'] = 0;
-    emotionMap['Sad'] = 0;
-    emotionMap['Angry'] = 0;
-    emotionMap['Anxious'] = 0;
-    emotionMap['Peaceful'] = 0;
-    emotionMap['Lazy'] = 0;
 
     if(emotionCollection.length >= 10){
         emotionCollection.pop();
