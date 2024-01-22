@@ -11,7 +11,7 @@ const clear = document.getElementById('clearButton');
 
 //Needs to be saved
 const descriptionCollection = [];
-const emotionCollection = [];
+let emotionCollection = [];
 const ratingCollection = [];
 const currentDateCollection = [];
 const dataCollection = [];
@@ -25,64 +25,70 @@ let emotionMap = {
     'Lazy': 0
 };
 
+if(submit){
+    submit.addEventListener('click', () => {
+        if(descriptionCollection.length >= 10){
+            descriptionCollection.pop();
+        }
+        descriptionCollection.unshift(description.value)
 
-submit.addEventListener('click', () => {
-    if(descriptionCollection.length >= 10){
-        descriptionCollection.pop();
-    }
-    descriptionCollection.unshift(description.value)
+        if(emotionCollection.length >= 10){
+            emotionCollection.pop();
+        }
+        emotionCollection.unshift(emotion.value);
 
-    if(emotionCollection.length >= 10){
-        emotionCollection.pop();
-    }
-    emotionCollection.unshift(emotion.value);
-
-    emotionCollection.forEach(element => {
-        emotionMap[element]++;
-    });
+        emotionMap[emotionCollection[0]]++;
 
 
-    if(ratingCollection.length >= 10){
-        ratingCollection.pop();
-    }
-    ratingCollection.unshift(rating.value);
+        if(ratingCollection.length >= 10){
+            ratingCollection.pop();
+        }
+        ratingCollection.unshift(rating.value);
 
-    let ratingTotal = 0;
-    ratingCollection.forEach(element => {
-        ratingTotal += element;
-    });
-    const ratingMean = ratingTotal / ratingCollection.length;
+        let ratingTotal = 0;
+        ratingCollection.forEach(element => {
+            ratingTotal += element;
+        });
+        const ratingMean = ratingTotal / ratingCollection.length;
 
 
-    if(currentDateCollection.length >= 10){
-        currentDateCollection.pop();
-    }
-    currentDateCollection.unshift(currentDate.value)
+        if(currentDateCollection.length >= 10){
+            currentDateCollection.pop();
+        }
+        currentDateCollection.unshift(currentDate.value)
 
-    let newObj = {
-        des: description.value ,
-        emo: emotion.value ,
-        rat: rating.value ,
-        dat: currentDate.value
-    };
+        let newObj = {
+            des: description.value ,
+            emo: emotion.value ,
+            rat: rating.value ,
+            dat: currentDate.value
+        };
 
-    if(localStorage.length <= 0){
-        SetUp();
-    }
-    else{
-        ObjectMover();
-    }
+        if(localStorage.length <= 0){
+            localStorage.setItem("logCount", 1);
 
-    localStorage.setItem("obj1", JSON.stringify(newObj));
-    console.log('1: "' + newObj['des'] + '"');
+            SetUp();
+        }
+        else{
+            let holderCount = localStorage.getItem("logCount");
+            holderCount =  parseInt(holderCount) + 1;
+            localStorage.setItem("logCount", holderCount);
 
-    for (let i = 2; i <= 10; i++) {
-        let holderObj = JSON.parse(localStorage.getItem("obj" + i));
-        console.log("\n" + i + ": " + JSON.stringify(holderObj['des']));
-    }
+            ObjectMover();
+        }
 
-    location.replace('/Pages/library.html')
-})
+        localStorage.setItem("obj1", JSON.stringify(newObj));
+        //console.log('1: "' + newObj['des'] + '"');
+        console.log(localStorage.getItem("logCount"));
+
+        /*for (let i = 2; i <= 10; i++) {
+            let holderObj = JSON.parse(localStorage.getItem("obj" + i));
+            console.log("\n" + i + ": " + JSON.stringify(holderObj['des']));
+        }*/
+
+        location.replace('/Pages/library.html')
+    })
+}
 
 function SetUp() {
     console.log("Set Up\n");
@@ -109,10 +115,23 @@ function ObjectMover() {
     }
 }
 
-rateSlider.addEventListener('mousemove', () => {
-    rateLabel.textContent = rateSlider.value;
-})
+if(rateSlider) {
+    rateSlider.addEventListener('mousemove', () => {
+        rateLabel.textContent = rateSlider.value;
+    })
+}
 
-clear.addEventListener('click', () => {
-    localStorage.clear();
-})
+if(clear) {
+    clear.addEventListener('click', () => {
+        emotionCollection = [];
+        emotionMap = {
+            'Happy': 0,
+            'Sad': 0,
+            'Angry': 0,
+            'Anxious': 0,
+            'Peaceful': 0,
+            'Lazy': 0
+        };
+        localStorage.clear();
+    })
+}
