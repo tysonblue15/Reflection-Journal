@@ -21,7 +21,7 @@ function updateText(){
         else{
             document.getElementById('date'+i).innerText = holderObj['dat']; //holderObj['dat']
             document.getElementById('emotion'+i).innerText = holderObj['emo'];
-            document.getElementById('rating'+i).innerText = holderObj['rat'] + "/10";
+            document.getElementById('rating'+i).innerText = holderObj['rat'] + "/5";
         }
     }    
 }
