@@ -11,6 +11,9 @@ library.addEventListener('click', () => {
 
 function change() {
     const root = document.documentElement;
+    let ratingCollection = [0,0,0,0,0];
+    let mean = 0;
+
     let i = 1;
     while(i <= localStorage.getItem("logCount")){
         root.style.setProperty('--emotionCount', i); 
@@ -48,8 +51,13 @@ function change() {
             root.style.setProperty('--lazy', holderValue); 
         }
 
+        ratingCollection[holderObj['rat'] - 1]++;
+        mean += parseInt(holderObj['rat']);
+
         i++;
     }
+
+    mean /= localStorage.getItem("logCount"); 
     
     document.getElementById("happyOption").innerText += ": " + getComputedStyle(document.documentElement).getPropertyValue('--happy');
     
@@ -59,7 +67,12 @@ function change() {
     
     document.getElementById("anxiousOption").innerText += ": " + getComputedStyle(document.documentElement).getPropertyValue('--anxious');
     
-    document.getElementById("peacefulOption").innerText += ": " + getComputedStyle(document.documentElement).getPropertyValue('--peacful');
+    document.getElementById("peacefulOption").innerText += ": " + getComputedStyle(document.documentElement).getPropertyValue('--peaceful');
     
-    document.getElementById("lazyOption").innerText += ": " + getComputedStyle(document.documentElement).getPropertyValue('--lazy');
+    document.getElementById("lazyOption").innerText += ": " + getComputedStyle(document.documentElement).getPropertyValue('--lazy');  
+    
+    for(let j = 1; j <= 5; j++){
+        document.getElementById("bar"+j).setAttribute("data-amount", ratingCollection[j-1]);
+    }
+    document.getElementById("meanText") .innerText = "Average Rating: " + mean.toFixed(2);
 }

@@ -1,9 +1,8 @@
 const description = document.getElementById('description');
 const emotion = document.getElementById('emotion');
-const rating = document.getElementById('rating'); //ISSUE
+const rating = document.getElementById('rating');
 const currentDate = document.getElementById('currentDate');
 
-const rateSlider = document.getElementById('rating'); //ISSUE
 const rateLabel = document.getElementById('currentRate');
 
 const submit = document.getElementById('submitButton');
@@ -71,20 +70,21 @@ if(submit){
         }
         else{
             let holderCount = localStorage.getItem("logCount");
-            holderCount =  parseInt(holderCount) + 1;
+            if(holderCount < 10)
+                holderCount =  parseInt(holderCount) + 1;
             localStorage.setItem("logCount", holderCount);
 
             ObjectMover();
         }
 
         localStorage.setItem("obj1", JSON.stringify(newObj));
-        //console.log('1: "' + newObj['des'] + '"');
+            console.log('1: "' + newObj['des'] + '"');
         console.log(localStorage.getItem("logCount"));
 
-        /*for (let i = 2; i <= 10; i++) {
+        for (let i = 2; i <= 10; i++) {
             let holderObj = JSON.parse(localStorage.getItem("obj" + i));
-            console.log("\n" + i + ": " + JSON.stringify(holderObj['des']));
-        }*/
+            console.log("\n" + i + ": " + JSON.stringify(holderObj['emo']));
+        }
 
         location.replace('/Pages/library.html')
     })
@@ -115,9 +115,9 @@ function ObjectMover() {
     }
 }
 
-if(rateSlider) {
-    rateSlider.addEventListener('mousemove', () => {
-        rateLabel.textContent = rateSlider.value;
+if(rating) {
+    rating.addEventListener('mousemove', () => {
+        rateLabel.textContent = rating.value;
     })
 }
 
