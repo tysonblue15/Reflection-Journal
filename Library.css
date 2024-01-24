@@ -13,8 +13,15 @@ h1 {
 }
 
 
-#log1Section, #log2Section, #log3Section, #log4Section, #log5Section, #log6Section, #log7Section, #log8Section,
+/*#log1Section, #log2Section, #log3Section, #log4Section, #log5Section, #log6Section, #log7Section, #log8Section,
 #log9Section, #log10Section {
+    width: 1400px;
+    display: flex;
+    margin-bottom: 5px;
+    background-color: red;
+} */
+
+.log-section {
     width: 1400px;
     display: flex;
     margin-bottom: 5px;
