@@ -1,5 +1,10 @@
+* {
+    font-family: sans-serif;
+}
+
 body {
-    background-color: #2e2e2e;
+    background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url('Photos/City.jpg');
+    background-position: center;
     display: flex;              /*Makes it a flex container*/
     flex-direction: column;     /*Makes children stack vertically*/
     align-items: center;        /*Center children on horizontal axis*/
@@ -11,6 +16,7 @@ body {
 h1 {
     color: white;             /*Sets color of title to white*/
     font-size: 70px;
+    
 }
 
 #description {
@@ -49,7 +55,7 @@ h1 {
 }
 
 #currentRate {
-    margin-left: 90px;
+    margin-left: 120px;
     color: white;  
 }
 

@@ -16,6 +16,7 @@ function change() {
 
     let i = 1;
     while(i <= localStorage.getItem("logCount")){
+        
         root.style.setProperty('--emotionCount', i); 
         let holderObj = JSON.parse(localStorage.getItem("obj" + i));
         let holderValue = 0;
@@ -51,13 +52,24 @@ function change() {
             root.style.setProperty('--lazy', holderValue); 
         }
 
-        ratingCollection[holderObj['rat'] - 1]++;
-        mean += parseInt(holderObj['rat']);
+        if(localStorage.getItem("logCount") != 0){
+            ratingCollection[holderObj['rat'] - 1]++;
+            mean += parseInt(holderObj['rat']);
+        }
+        else{
+            mean = 0;
+        }
 
         i++;
     }
 
-    mean /= localStorage.getItem("logCount"); 
+    if(localStorage.getItem("logCount") != 0){
+        mean /= localStorage.getItem("logCount"); 
+    }
+    else{
+        mean = 0; 
+    }
+    
     
     document.getElementById("happyOption").innerText += ": " + getComputedStyle(document.documentElement).getPropertyValue('--happy');
     

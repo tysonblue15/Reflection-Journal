@@ -15,6 +15,10 @@
     --lazyDeg: calc(var(--lazy) * var(--degreeAmount) * 1deg + var(--peacefulDeg));
 }
 
+* {
+    font-family: sans-serif;
+}
+
 body {
     background-color: #6F705B;
     font-size: 16px;
@@ -49,7 +53,8 @@ h1 {
         #cf0808 var(--sadDeg) var(--angryDeg),
         #5ab510 var(--angryDeg) var(--anxiousDeg),
         #d10a71 var(--anxiousDeg) var(--peacefulDeg),
-        #5a0cad var(--peacefulDeg) var(--lazyDeg)
+        #5a0cad var(--peacefulDeg) var(--lazyDeg),
+        #fff var(--lazyDeg) 360deg
     );
 }
 

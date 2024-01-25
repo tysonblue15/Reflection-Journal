@@ -6,6 +6,7 @@ const currentDate = document.getElementById('currentDate');
 const rateLabel = document.getElementById('currentRate');
 
 const submit = document.getElementById('submitButton');
+const logLibrary = document.getElementById('libraryButton');
 const clear = document.getElementById('clearButton');
 
 //Needs to be saved
@@ -78,13 +79,11 @@ if(submit){
         }
 
         localStorage.setItem("obj1", JSON.stringify(newObj));
-            console.log('1: "' + newObj['des'] + '"');
-        console.log(localStorage.getItem("logCount"));
 
-        for (let i = 2; i <= 10; i++) {
+        /*for (let i = 2; i <= 10; i++) {
             let holderObj = JSON.parse(localStorage.getItem("obj" + i));
             console.log("\n" + i + ": " + JSON.stringify(holderObj['emo']));
-        }
+        }*/
 
         location.replace('/Pages/library.html')
     })
@@ -121,6 +120,16 @@ if(rating) {
     })
 }
 
+if(logLibrary){
+    logLibrary.addEventListener('click', () => {
+        if(localStorage.length <= 0){
+            SetUp();   
+            localStorage.setItem("logCount", 0);
+        }
+        location.replace('/Pages/library.html');
+    })
+}
+
 if(clear) {
     clear.addEventListener('click', () => {
         emotionCollection = [];
@@ -133,5 +142,6 @@ if(clear) {
             'Lazy': 0
         };
         localStorage.clear();
+        //localStorage.setItem("logCount", 0);
     })
 }
