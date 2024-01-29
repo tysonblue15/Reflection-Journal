@@ -3,7 +3,7 @@
 }
 
 body {
-    background-color: #d3d3d3;
+    background-color: #5875C7;
     display: flex;                  /*Makes it a flex container*/
     flex-direction: column;         /*Makes children stack vertically*/
     align-items: center;            /*Center children on horizontal axis*/
@@ -13,17 +13,8 @@ body {
 }
 
 h1 {
-    color: black;                /*Sets color of title to black*/
+    color: #272A33;              
 }
-
-
-/*#log1Section, #log2Section, #log3Section, #log4Section, #log5Section, #log6Section, #log7Section, #log8Section,
-#log9Section, #log10Section {
-    width: 1400px;
-    display: flex;
-    margin-bottom: 5px;
-    background-color: red;
-} */
 
 .log-section {
     width: 1400px;

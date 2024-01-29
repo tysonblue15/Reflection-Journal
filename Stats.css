@@ -20,7 +20,7 @@
 }
 
 body {
-    background-color: #6F705B;
+    background-color: #5F6D94;
     font-size: 16px;
     margin: 0;
     display: flex;
@@ -31,7 +31,7 @@ body {
 }
 
 h1 {
-    color: #fff;
+    color: #272A33;
 }
 
 .x-box-container, .bars-container {
