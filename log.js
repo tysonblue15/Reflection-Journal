@@ -9,7 +9,6 @@ const submit = document.getElementById('submitButton');
 const logLibrary = document.getElementById('libraryButton');
 const clear = document.getElementById('clearButton');
 
-//Needs to be saved
 const descriptionCollection = [];
 let emotionCollection = [];
 const ratingCollection = [];
@@ -80,11 +79,6 @@ if(submit){
 
         localStorage.setItem("obj1", JSON.stringify(newObj));
 
-        /*for (let i = 2; i <= 10; i++) {
-            let holderObj = JSON.parse(localStorage.getItem("obj" + i));
-            console.log("\n" + i + ": " + JSON.stringify(holderObj['emo']));
-        }*/
-
         location.replace('/Pages/library.html')
     })
 }
@@ -142,6 +136,5 @@ if(clear) {
             'Lazy': 0
         };
         localStorage.clear();
-        //localStorage.setItem("logCount", 0);
     })
 }
